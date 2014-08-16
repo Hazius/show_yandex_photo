@@ -1,0 +1,27 @@
+<h1>История просмотра фотографий</h1>
+
+<table class="table table-hover table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Заголовок</th>
+      <th>Фото</th>
+      <th>Просмотры</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_of_photos.each do |history_of_photo| %>
+      <tr>
+        <td><%= history_of_photo.title %></td>
+        <td><%= image_tag history_of_photo.url, size: "100", class: "img-polaroid"  %></td>
+        <td><%= history_of_photo.hits %></td>
+        <td><%= link_to 'Просмотр', history_of_photo, class: "green" %></td>
+        <td><%= link_to 'Удалить', history_of_photo, class: "red", method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

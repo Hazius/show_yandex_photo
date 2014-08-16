@@ -11,3 +11,20 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap";
+
+a {
+
+	&:hover {
+		background-color: transparent;		
+	}
+
+	&.green {
+		color: green;
+	}
+
+	&.red {
+		color: red;
+	}
+} 

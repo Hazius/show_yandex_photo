@@ -1,6 +1,8 @@
 <%= link_to "История", show_history_path %>
 
 <% @feed.entries.each do |image| %>
+	<br />
+	<%= image.title %>	
 	<%= image_tag image.links[3], size: "100x100" %>
 <% end %>
 

@@ -1,5 +1,7 @@
 ShowYandexPhoto::Application.routes.draw do
 
+  resources :history_of_photos
+
   root 'welcome#index'
 
   match "welcome/show_history",

@@ -1,0 +1,13 @@
+<p>
+  <h3><%= @history_of_photo.title %></h3>
+</p>
+
+<p>
+  <h5>Просмотров: <%= @history_of_photo.hits %></h5>
+</p>
+
+<p>
+  <%= image_tag @history_of_photo.url, size: "400x400", class: "img-polaroid"  %>
+</p>
+
+<%= link_to 'Back', history_of_photos_path %>
