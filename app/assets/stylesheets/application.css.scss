@@ -16,17 +16,17 @@
 
 a {
 
-	font-size: 12pt;
+  font-size: 12pt;
 
-	&:hover {
-		background-color: transparent;		
-	}
+  &:hover {
+    background-color: transparent;
+  }
 
-	&.green {
-		color: green;
-	}
+  &.green {
+    color: green;
+  }
 
-	&.red {
-		color: red;
-	}
-} 
+  &.red {
+    color: red;
+  }
+}
