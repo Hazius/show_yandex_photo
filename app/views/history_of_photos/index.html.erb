@@ -1,13 +1,14 @@
 <h1>История просмотра фотографий</h1>
-
+<%= link_to "На главную", root_path %>
+<br /><br />
 <table class="table table-hover table-bordered table-condensed">
   <thead>
     <tr>
       <th>Заголовок</th>
       <th>Фото</th>
-      <th>Просмотры</th>
+      <th>Просмотры <%= link_to 'По убыванию', history_of_photos_path(sort_by: "hits"), class: "green" %></th>
       <th></th>
-      <th></th>
+      <th><%= link_to 'Очистить всю историю', destroy_all_path, class: "red", method: :delete, data: { confirm: 'Очистить всю историю?' } %></th>
     </tr>
   </thead>
 
@@ -15,7 +16,7 @@
     <% @history_of_photos.each do |history_of_photo| %>
       <tr>
         <td><%= history_of_photo.title %></td>
-        <td><%= image_tag history_of_photo.url, size: "100", class: "img-polaroid"  %></td>
+        <td><%= image_tag history_of_photo.url, size: "30", class: "img-polaroid"  %></td>
         <td><%= history_of_photo.hits %></td>
         <td><%= link_to 'Просмотр', history_of_photo, class: "green" %></td>
         <td><%= link_to 'Удалить', history_of_photo, class: "red", method: :delete, data: { confirm: 'Вы уверены?' } %></td>

@@ -1,8 +1,7 @@
-<%= link_to "История", show_history_path %>
+<%= button_to "Показать 5 случайных фотографий", root_path, remote: true, class: "btn btn-primary btn-large" %>
+<br />
+<div id="show_images"><%= render 'show_images' %></div>
+<br />
+<%= link_to "История", history_of_photos_path %>
 
-<% @feed.entries.each do |image| %>
-	<br />
-	<%= image.title %>	
-	<%= image_tag image.links[3], size: "100x100" %>
-<% end %>
 
