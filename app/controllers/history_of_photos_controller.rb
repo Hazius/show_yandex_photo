@@ -9,20 +9,20 @@ class HistoryOfPhotosController < ApplicationController
     end
   end
 
-  def show    
+  def show
     l_hits = @history_of_photo.hits + 1
     @history_of_photo.update_attribute("hits", l_hits)
   end
 
   def destroy
     @history_of_photo.destroy
-    redirect_to history_of_photos_url  
+    redirect_to history_of_photos_url
   end
 
   def destroy_all
     HistoryOfPhoto.delete_all
     redirect_to history_of_photos_url
-  end  
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

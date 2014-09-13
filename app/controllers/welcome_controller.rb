@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-	
+
   def index
     #@feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/nvvukr/photos/published/?limit=5')
   	l_feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/Ankorstil/photos/published/')
@@ -15,12 +15,12 @@ class WelcomeController < ApplicationController
 
   		def take_random(p_feed, p_quantity)
   			l_result = Array.new
-  			5.times do  				
-  				begin 
+  			5.times do
+  				begin
   					l_feed = p_feed.entries[Random.rand(1..100)]
   				end while l_feed == nil
-  				l_result.push(l_feed)  					
-  			end 
+  				l_result.push(l_feed)
+  			end
   			return l_result
   		end
 
