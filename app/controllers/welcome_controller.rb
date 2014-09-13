@@ -1,7 +1,6 @@
 class WelcomeController < ApplicationController
 
   def index
-    #@feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/nvvukr/photos/published/?limit=5')
     l_feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/Ankorstil/photos/published/')
     @feed = take_random(l_feed, 5) #оставляем 5 рандомных
     save_in_history(@feed) #сохраняем в бд для истории
