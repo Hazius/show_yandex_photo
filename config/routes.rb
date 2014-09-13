@@ -2,14 +2,12 @@ ShowYandexPhoto::Application.routes.draw do
 
   resources :history_of_photos
 
-  match "/",  as: "root",
-              to: "welcome#index", 
-              via: [:get, :post]
+  root 'welcome#index', via: [:get, :post]
 
   match "/destroy_all",
-              as: "destroy_all",
-              to: "history_of_photos#destroy_all", 
-              via: :delete
+    as: "destroy_all",
+    to: "history_of_photos#destroy_all",
+    via: :delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
