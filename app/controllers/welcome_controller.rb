@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     #@feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/nvvukr/photos/published/?limit=5')
   	l_feed = Feedjira::Feed.fetch_and_parse('http://api-fotki.yandex.ru/api/users/Ankorstil/photos/published/')
   	@feed = take_random(l_feed, 5) #оставляем 5 рандомных
-  	save_in_history() #сохраняем в бд для истории
+  	save_in_history(@feed) #сохраняем в бд для истории
   	respond_to do |format|
   		format.html
   		format.js
@@ -24,8 +24,8 @@ class WelcomeController < ApplicationController
   			return l_result
   		end
 
-  		def save_in_history()
-  			@feed.entries.each do |image|
+  		def save_in_history(feed)
+  			feed.entries.each do |image|
   				HistoryOfPhoto.create(title: image.title, url: image.links[3])
   			end
   		end
