@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
 
       def take_random(p_feed, p_quantity)
         l_result = Array.new
-        5.times do
+        p_quantity.times do
           begin
             l_feed = p_feed.entries[Random.rand(1..100)]
           end while l_feed == nil
