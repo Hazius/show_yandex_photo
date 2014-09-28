@@ -1,4 +1,5 @@
 class HistoryOfPhotosController < ApplicationController
+
   before_action :set_history_of_photo, only: [:show, :destroy]
 
   def index
@@ -10,8 +11,7 @@ class HistoryOfPhotosController < ApplicationController
   end
 
   def show
-    l_hits = @history_of_photo.hits + 1
-    @history_of_photo.update_attribute("hits", l_hits)
+    @history_of_photo.increment_hits
   end
 
   def destroy
@@ -25,7 +25,6 @@ class HistoryOfPhotosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_history_of_photo
       @history_of_photo = HistoryOfPhoto.find(params[:id])
     end
