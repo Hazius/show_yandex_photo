@@ -1,4 +1,4 @@
-<% @feed.entries.each do |image| %>
-  <%= image_tag image.links[3], size: "200", class: "img-polaroid" %>
+<% @photos.each do |photo| %>
+  <%= image_tag photo.links[3], size: "200", class: "img-polaroid" %>
 <% end %>
 
