@@ -7,6 +7,11 @@ class HistoryOfPhoto < ActiveRecord::Base
   def increment_hits
     self.hits += 1
     self.save
+    self.hits
+  end
+
+  def to_s
+    "#{self.title}:#{self.url}"
   end
 
 end
